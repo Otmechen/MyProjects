@@ -1,0 +1,70 @@
+function calculateSquareAndCube(num) {
+  console.log(num * num);
+  console.log(num * num * num);  
+}
+
+Using the above function for numbers 2, 3, and 4
+
+calculateSquareAndCube(2);
+calculateSquareAndCube(3);
+calculateSquareAndCube(4);
+
+Print:  4
+        8
+        9
+        27
+        16
+        64
+
+----------------------------------------------------------
+
+function computeValue(a, b) {
+   var exp1 = a * a + 2 * a * b + b * b;
+   var exp2 = a + b;
+   console.log(exp1); 
+   console.log(exp2);
+}
+
+const A = 3; 
+const B = 5; 
+computeValue(A, B);
+
+Print: 64
+       8
+
+----------------------------------------------------------
+
+function greet(name){
+   console.log("Hello, " + name + "!");
+}
+
+var name = "Alice";
+greet(name);
+
+Print: Hello, Alice!
+
+----------------------------------------------------------
+
+function greet(name){
+    return "Hello, " +  name + "!";
+}
+function capitalize(text){
+    return text.toUpperCase();
+}
+
+// Solution as follows
+function greetAndCapitalize(name){
+    var greeting = greet(name);
+    return capitalize(greeting);
+}
+// Call the functions
+var name = "Alice";
+var finalResult = greetAndCapitalize(name);
+
+// Display the results
+console.log("Final Result:", finalResult);
+
+Print: Final Result: HELLO, ALICE!
+
+----------------------------------------------------------
+
