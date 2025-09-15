@@ -1,0 +1,13 @@
+The following command is used for console printing:
+ 
+console.log(3 + 4)
+
+console.log("Hello world!")
+
+It can be used to print various things:
+
+console.log(3 + 4, 2 + 1)
+
+You can use several types of data at the same time:
+
+console.log(7, "plus", 3, "equals", 10);

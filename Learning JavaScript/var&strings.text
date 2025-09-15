@@ -1,0 +1,70 @@
+var age = 25;
+
+console.log(age)
+
+Print: 25
+
+var firstName = "Code";
+var lastName = "Chef";
+console.log(firstName, lastName);
+
+Print: Code Chef
+
+var a, b;
+a = 20;
+b = 23;
+console.log(a + b);
+
+Print: 43
+
+var length = 45;
+var width = 76;
+var area = length * width;
+
+console.log(area);
+
+Print: 3420
+
+const pi = 3.14;
+var radius = 8.9;
+
+var area = pi * radius * radius;
+
+console.log(area);
+
+Print: 248.71940000000004
+
+var a = 'Learning';
+var b = 'is fun!';
+
+console.log(a, b);
+
+Print: Learning is fun!
+
+var a = -50;
+var b = 40;
+
+var total = a + b;
+var product = a * b;
+
+console.log(total, product);
+
+Print: -10 -2000
+
+var txt = "NumeroTres";
+var txtLen = txt.length;
+console.log(txtLen);
+
+Print: 10
+
+var word = "Ocygen";
+var newWord = word.replace('c', 'x');
+console.log(newWord);
+
+Print: Oxygen
+
+var str = "String";
+var newStr = str.slice(2, 6);
+console.log(newStr);
+
+Print: ring
