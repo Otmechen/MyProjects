@@ -1,0 +1,159 @@
+process.stdin.setEncoding('utf8');
+process.stdin.on('data', function(input) {
+    const nums = input.trim().split('\n');
+    let x = parseInt(nums[0]);
+    let y = parseInt(nums[1]);
+    // Complete the code
+    console.log(x + y);
+    console.log(x - y);
+});
+
+Print: 
+
+58
+12
+
+-----------------------------------------------------------------------------
+
+process.stdin.setEncoding('utf8');
+process.stdin.on('data', function(input) {
+    const nums = input.trim().split('\n');
+    let x = parseInt(nums[0]), y = parseInt(nums[1]);
+    console.log(x, y, x + y);
+});
+
+Print:
+
+5 9 14
+Explanation:
+a = 5, b = 9 and a + b = 14. 
+By default - output on a single line is space separated.
+
+-----------------------------------------------------------------------------
+
+process.stdin.setEncoding('utf8');
+process.stdin.on('data', function(input) {
+   const nums = input.trim().split('\n');
+   let a = parseInt(nums[0]), b = parseInt(nums[1]);
+   let c = a + 2;
+   let d = b + c;
+   console.log(d);
+});
+
+Print:
+
+16
+Explanation:
+a is 5 and b is 9.
+Then c will be a + 2 => 5 + 2 => 7
+and d will be b + c => 9 + 7 => 16
+
+-----------------------------------------------------------------------------
+
+process.stdin.setEncoding("utf8");
+process.stdin.on("data", function(input){
+    console.log("Hello", input);
+});
+
+Input: Chef
+
+Print: Hello Chef
+
+-----------------------------------------------------------------------------
+
+process.stdin.setEncoding('utf8');
+
+process.stdin.on('data', function(input) {
+  // Write code to take two values as input
+    const nums = input.trim().split('\n');
+    const length = parseInt(nums[0]), width = parseInt(nums[1]);
+    const area = length * width;
+    console.log("Area of the rectangle is:", area);
+});
+
+Input: 10 23
+
+Print:
+
+Area of the rectangle is: 230
+
+-----------------------------------------------------------------------------
+
+process.stdin.setEncoding("utf8");
+process.stdin.on("data", function(input){
+   const N = parseInt(input.trim());
+   const square = N * N;
+   const cube = N * N * N;
+   console.log("Square is:", square);
+   console.log("Cube is:", cube);
+});
+
+Input: 3
+
+Print: 
+
+Square is: 9
+Cube is: 27
+
+-----------------------------------------------------------------------------
+
+// Set the encoding for standard input to UTF-8
+process.stdin.setEncoding('utf8');
+
+// Listen for data input from standard input
+process.stdin.on("data", function(input){
+    // Trim the input to remove unnecessary whitespace and split it by newlines
+    const nums = input.trim().split("\n");
+
+    // The first line contains the number of test cases
+    const n = nums[0];
+
+    // Loop through the test cases
+    for (var i = 1; i <= n; i++) {
+        console.log(parseInt(nums[i]) * -1);
+    }
+})
+
+Input:
+
+5
+1
+2
+3
+-4
+-5
+
+Print: 
+
+-1
+-2
+-3
+4
+5
+
+-----------------------------------------------------------------------------
+
+process.stdin.setEncoding('utf8');
+process.stdin.on('data', function(input) {
+    const strings = input.trim().split('\n');
+    const testCases = strings[0];
+    for(i = 1; i <= testCases; i++){
+      var S = strings[i];
+      var X = S + S;
+      console.log(X);
+    }
+    
+});
+
+Input:
+
+3
+ab
+bc
+cd
+
+Print:
+
+abab
+bcbc
+cdcd

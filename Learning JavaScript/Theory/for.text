@@ -1,0 +1,49 @@
+var numbers = [1, 6, 4, 3, 2, 5];
+
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
+
+Print:
+1
+6
+4
+3
+2
+5
+
+--------------------------------------------------
+
+var string = 'bolloon';
+
+// use this variable to count occurrences of o
+var counter = 0   ;   
+
+for(var i = 0; i < string.length; i++) {
+   if(string[i] === 'o'){
+     counter += 1;
+   }
+}
+
+console.log(counter);
+
+Print: 3
+
+------------------------------------------------------
+
+function runLoop(num) {
+  for(var i = 1; i <= num; i++) {
+     console.log(i);
+  }
+}
+
+function solve(num) {
+   runLoop(num);
+}
+
+Print:
+1
+2
+3
+4
+5

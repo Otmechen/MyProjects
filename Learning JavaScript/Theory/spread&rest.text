@@ -1,0 +1,22 @@
+const fruits = ["apple", "banana"];
+const vegetables = ["carrot", "spinach"];
+
+// Merge the arrays into a new array using the spread operator
+const groceries = [...fruits, ...vegetables];
+
+console.log(groceries);
+
+Print: [ 'apple', 'banana', 'carrot', 'spinach' ]
+
+-----------------------------------------------------------------
+
+function multiply(...args) {
+  return args.reduce((product, num) => product * num, 1);
+}
+
+console.log(multiply(2, 3, 4));
+console.log(multiply(1, 5, 6, 2));
+
+Print: 
+24
+60

@@ -1,0 +1,68 @@
+// Array destructuring
+const colors = ["red", "green", "blue"];
+const [primaryColor, secondaryColor] = colors;
+
+// Object destructuring
+const user = {
+  username: "johnDoe",
+  email: "john@example.com",
+  password: "securepassword123"
+};
+const { username, email } = user;
+
+// Print all the variables
+console.log("Primary Color:", primaryColor);
+console.log("Secondary Color:", secondaryColor);
+console.log("Username:", username);
+console.log("Email:", email);
+
+Print: 
+
+Primary Color: red
+Secondary Color: green
+Username: johnDoe
+Email: john@example.com
+
+-----------------------------------------------------------------------------
+
+const employee = {
+  name: "Alice",
+  job: {
+    title: "Developer",
+    department: "Engineering"
+  }
+};
+
+// Extract title and department
+const { job: {title, department} } = employee;
+
+// Print all the variables
+console.log("Title:", title);
+console.log("Department:", department);
+
+Print:
+
+Title: Developer
+Department: Engineering
+
+-----------------------------------------------------------------------------
+
+const fruits = ["apple", "banana"];
+const [ firstFruit, secondFruit ] = fruits;
+console.log(firstFruit);
+console.log(secondFruit);
+
+const employee = { name: "John", info: { age: 30 } };
+const { info: { age }, name } = employee;
+console.log(age);
+console.log(name);
+
+Print: 
+
+apple
+banana
+30
+John
+
+-----------------------------------------------------------------------------
+

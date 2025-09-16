@@ -1,0 +1,72 @@
+// 1. A function that subtracts the number 456 from 789
+const subtract = () => 789 - 456;
+
+// 2. A function that divides the number 678 with 8
+const divide = () => 678 / 8;
+
+// 3. A function that calculates the square of 89
+const square = () => 89 * 89;
+
+// 4. A function that checks whether the number 256789 is even or odd
+const isEvenOrOdd = () => (256789 % 2 === 0 ? "Even" : "Odd");
+
+// Testing the functions
+console.log("Subtraction result:", subtract()); // Output for task 1
+console.log("Division result:", divide()); // Output for task 2
+console.log("Square result:", square()); // Output for task 3
+console.log("256789 is:", isEvenOrOdd()); // Output for task 4
+
+Print:
+Subtraction result: 333
+Division result: 84.75
+Square result: 7921
+256789 is: Odd
+
+---------------------------------------------------------------------------
+
+const person = {
+  name: "Alice",
+  greet: function() {
+   setTimeout(() => {
+       console.log("Hello, " + this.name);
+   }, 1000);
+  }
+};
+
+person.greet();
+
+Print: Hello, Alice
+
+---------------------------------------------------------------------------
+
+Correct Answer:
+
+const add = (a, b) => { return a + b; };
+
+Explanation: Arrow functions use the => syntax, and if the body contains multiple statements, 
+it must use curly braces and explicitly return the result.
+
+----------------------------------------------------------------------------
+
+const person = {
+  name: 'John',
+  greet: () => {
+    console.log(this.name);
+  }
+};
+person.greet();
+
+Correct Answer:
+
+this refers to the global object (or undefined in strict mode).
+
+Explanation: Arrow functions do not have their own this context and instead inherit this 
+from the surrounding (global) scope.
+
+-----------------------------------------------------------------------------
+
+Correct Answer:
+
+The function body can only contain a single expression, and no return statement is needed.
+
+Explanation: For concise syntax, the single expression is implicitly returned, and no curly braces are used.

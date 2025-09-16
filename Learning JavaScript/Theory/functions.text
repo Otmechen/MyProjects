@@ -3,7 +3,7 @@ function calculateSquareAndCube(num) {
   console.log(num * num * num);  
 }
 
-Using the above function for numbers 2, 3, and 4
+// Using the above function for numbers 2, 3, and 4
 
 calculateSquareAndCube(2);
 calculateSquareAndCube(3);
@@ -68,3 +68,15 @@ Print: Final Result: HELLO, ALICE!
 
 ----------------------------------------------------------
 
+// Main function with an arrow function as a callback
+function doSomething(callback) {
+  console.log('Doing something...');
+  
+  // Calling back the arrow function
+  callback();
+}
+
+// Using the main function with an arrow function as a callback
+doSomething(() => {
+  console.log('Callback function called!');
+});
