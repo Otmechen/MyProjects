@@ -1,17 +1,32 @@
-content1Description = "This is Task 1";
-content1Date = "2025-10-04"
+var strikeButton = document.getElementById("strikeButton");
 
-content2Description = "This is Task 2";
-content2Date = "2025-10-12"
+strikeButton.addEventListener("click", () => {
+    var highstrike = document.getElementById('highPriorityContainer');
+    highstrike.style.textDecoration = "line-through";
+    var lowstrike = document.getElementById('lowPriorityContainer');
+    lowstrike.style.textDecoration = "line-through";
+})
 
-content3Description = "This is Task 3";
-content3Date = "2025-04-01"
+var delButton = document.getElementById("delButton");
+
+delButton.addEventListener("click", () => {
+    var highdel = document.getElementById('highPriorityContainer');
+    highdel.innerHTML = '';
+    var lowdel = document.getElementById('lowPriorityContainer');
+    lowdel.innerHTML = '';
+})
+
+const textInput = document.getElementById("taskInput");
+const submitButton = document.getElementById("addButton");
+const dateInput = document.getElementById("deadlineInput");
+
+submitButton.addEventListener("click", () => {
+  const content1Description = textInput.value;
+  const content1Date = dateInput.value;
+  displayContents(content1Description, content1Date);
+});
 
 var currentDate = new Date();
-
-displayContents(content1Description, content1Date);
-displayContents(content2Description, content2Date);
-displayContents(content3Description, content3Date);
 
 function displayContents(contentDescription, contentDate) {
   if (new Date(contentDate) <= currentDate.getTime()) {
