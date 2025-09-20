@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Play Start Sound</title>
+    </head>
+    <body>
+        <button id="playStartSoundButton">Play Sound</button>
+        
+        <audio id="startSound">
+            <source src="https://cdn.codechef.com/Learning/startsound.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <!-- Add play fail sound button -->
+        <button id="playFailSoundButton">Play Fail Sound</button>
+        
+        <!-- Add the audio field for end failure sound -->
+        <audio id="failSound">
+            <source src="https://cdn.codechef.com/Learning/endfailsound.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <!-- Add play success sound button -->
+        <button id="playSuccessSoundButton">Play Success Sound</button>
+
+        <!-- Add the audio field for end success sound -->
+        <audio id="successSound">
+            <source src="https://cdn.codechef.com/Learning/endsuccesssound.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
