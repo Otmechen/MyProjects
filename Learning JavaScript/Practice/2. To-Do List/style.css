@@ -1,50 +1,39 @@
 #highPriorityContainer, #lowPriorityContainer {
-    border-radius: 5px;
-    height: 200px;
-    width: 90%;
-    margin: 10px auto;
-    padding: 10px;
+  border-radius: 5px;
+  height: 200px;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
 }
 
 #highPriorityContainer {
-    border: 3px solid red;
+  border: 3px solid red;
 }
 
 #lowPriorityContainer {
-    border: 3px solid brown;  
+  border: 3px solid brown;  
 }
 
 .input-container {
-    display: flex;
+  display: flex;
 }
 
 .input-container input {
-    flex-grow: 1;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 16px;
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
 }
 
 .input-container button {
-    background-color: #4caf50;
-    color: #fff;
-    border-radius: 3px;
-    padding: 10px 20px;
-    margin-left: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-#delButton, #strikeButton {
-    background-color: #4caf50;
-    color: #fff;
-    border-radius: 3px;
-    padding: 10px 20px;
-    margin-left: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 3px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 .todo-list {
@@ -88,4 +77,25 @@ body:before {
   );
   pointer-events: none;
   z-index: -1;
+}
+
+.delete-button {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin-left: auto;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #ff3333;
+}
+
+.delete-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }

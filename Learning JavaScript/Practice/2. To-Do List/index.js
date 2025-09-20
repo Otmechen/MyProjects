@@ -1,56 +1,84 @@
-var strikeButton = document.getElementById("strikeButton");
+var highPriorityTasks = [];
+var lowPriorityTasks = [];
+var today = new Date();
 
-strikeButton.addEventListener("click", () => {
-    var highstrike = document.getElementById('highPriorityContainer');
-    highstrike.style.textDecoration = "line-through";
-    var lowstrike = document.getElementById('lowPriorityContainer');
-    lowstrike.style.textDecoration = "line-through";
-})
+document.getElementById('addButton').addEventListener('click', function () {
+    var taskInput = document.getElementById('taskInput');
+    var deadlineInput = document.getElementById('deadlineInput');
 
-var delButton = document.getElementById("delButton");
+    var newTask = {
+        description: taskInput.value,
+        deadline: deadlineInput.value,
+        done: false,
+    };
 
-delButton.addEventListener("click", () => {
-    var highdel = document.getElementById('highPriorityContainer');
-    highdel.innerHTML = '';
-    var lowdel = document.getElementById('lowPriorityContainer');
-    lowdel.innerHTML = '';
-})
+    var taskDeadline = new Date(deadlineInput.value);
 
-const textInput = document.getElementById("taskInput");
-const submitButton = document.getElementById("addButton");
-const dateInput = document.getElementById("deadlineInput");
+    if (taskDeadline.getTime() <= today.getTime()) {
+      highPriorityTasks.push(newTask);
+    } else {
+      lowPriorityTasks.push(newTask);
+    }
+    displayTasks();
 
-submitButton.addEventListener("click", () => {
-  const content1Description = textInput.value;
-  const content1Date = dateInput.value;
-  displayContents(content1Description, content1Date);
+    taskInput.value = '';
+    deadlineInput.value = '';
 });
 
-var currentDate = new Date();
+function displayTasks() {
+  var highPriorityContainer = document.getElementById('highPriorityContainer');
+  var lowPriorityContainer = document.getElementById('lowPriorityContainer');
+  highPriorityContainer.innerHTML = '';
+  lowPriorityContainer.innerHTML = '';
 
-function displayContents(contentDescription, contentDate) {
-  if (new Date(contentDate) <= currentDate.getTime()) {
-      var container1 = document.getElementById("highPriorityContainer");
-      var contentItem1 = createContentElement(contentDescription, contentDate);      
-      highPriorityContainer.appendChild(contentItem1);
-  } else {
-      var container2 = document.getElementById("lowPriorityContainer");
-      var contentItem2 = createContentElement(contentDescription, contentDate);
-      lowPriorityContainer.appendChild(contentItem2);
-  }
+  var today = new Date();
+
+  highPriorityTasks.forEach(function (task, index) {
+    var taskItem = createTaskElement(task, index, 'high-priority');
+    highPriorityContainer.appendChild(taskItem);
+  });
+
+  lowPriorityTasks.forEach(function (task, index) {
+    var taskItem = createTaskElement(task, index, 'low-priority');
+    lowPriorityContainer.appendChild(taskItem);
+  });
 }
 
-function createContentElement(description, date) {
-    var contentItem = document.createElement("div")
-  
-    var checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-  
-    var label = document.createElement("label");
-    label.innerHTML = description + " (Target date: " + date + ")";
-  
-    contentItem.appendChild(checkbox);
-    contentItem.appendChild(label);
+function createTaskElement(task, index, priorityClass) {
+  var taskItem = document.createElement('div');
+  taskItem.className = 'todo-item';
+  taskItem.classList.add(priorityClass);
 
-    return contentItem;
+  var checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.checked = task.done;
+  checkbox.addEventListener('change', function () {
+    task.done = this.checked;
+    displayTasks();
+  });
+
+  var label = document.createElement('label');
+  label.textContent = task.description + ' (Deadline: ' + task.deadline + ')';
+  if (task.done) {
+    label.style.textDecoration = 'line-through';
+  }
+  
+  var deleteButton = document.createElement('button');
+  deleteButton.className = 'delete-button';
+  deleteButton.textContent = 'Delete';
+  deleteButton.setAttribute('data-index', index);
+  deleteButton.addEventListener('click', function () {
+    if (priorityClass === 'high-priority') {
+      highPriorityTasks.splice(index, 1);
+    } else {
+      lowPriorityTasks.splice(index, 1);
+    }
+    displayTasks();
+  });
+
+  taskItem.appendChild(checkbox);
+  taskItem.appendChild(label);
+  taskItem.appendChild(deleteButton);
+
+  return taskItem;
 }
