@@ -1,3 +1,3 @@
 --Important--
 
-The first 7 (seven) projects are done with CodeChef, the others will be done outside of CodeChef.
+This folder is dedicated to projects I am doing to improve as a Front-End developer.
