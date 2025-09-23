@@ -60,16 +60,7 @@ $(document).ready(function () {
     // Clear chances and feedback after the game is over
     $chancesSpan.text("0");
     $feedbackDiv.empty();
-  }
-  
-  /* DO NOT CHANGE THE CODE BELOW THIS */
-  
-  
-  
-  
-  
-
-  
+  } 
 
   let secretWord = "";
   let maxTries = "";
